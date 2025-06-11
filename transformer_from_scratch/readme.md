@@ -92,28 +92,6 @@ Decoder ← Target Sequence + Look-Ahead Mask
         ↓
   Linear Layer → Output Tokens
 ```
-
----
-
-## 🔍 Common Beginner Confusions
-
-| Concept           | Clarification |
-|------------------|--------------|
-| `einsum`         | Just concise matrix multiplication. Easier than it looks. |
-| Look-Ahead Mask  | Prevents the decoder from seeing future tokens. |
-| Padding Mask     | Avoids attending to pad tokens. |
-| Tensor Shapes    | Watch dimensions: batch first (N), then sequence length. |
-
----
-
-## 💻 Key Line to Run
-
-```python
-out = model(src, trg[:, :-1])  # Shift target to predict next token
-```
-
----
-
 ## 📐 Tensor Shape Summary
 
 | Tensor          | Shape                        | Description |
@@ -124,16 +102,6 @@ out = model(src, trg[:, :-1])  # Shift target to predict next token
 | `out`          | (N, query_len, embed_size)    | Final transformer output |
 
 ---
-
-## ✅ Why Use This?
-
-- Learn inner workings of attention
-- Clear code for experimentation
-- Minimal dependencies
-- Great for interviews, education, and intuition-building
-
----
-
 ## 📷 Author & Credit
 
 Created by [Aladdin Persson](https://www.youtube.com/c/AladdinPersson)  
